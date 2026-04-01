@@ -1,8 +1,11 @@
 import sys
+from models.py import FileState
 
 
 def main():
-    print("Hello from py-fim!")
+    directory = sys.argv[1]
+    
+
 
 
 if __name__ == "__main__":
