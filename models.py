@@ -2,12 +2,11 @@ import hashlib
 from pathlib import Path
 
 class FileState():
-    def __init__(self, path_to_file):
-        self.path = path_to_file
+    def __init__(self, file):
+        self.file = file
     
     def hash_file(self):
-        file = Path(self.path)
-        file_content = file.read_bytes()
+        file_content = self.file.read_bytes()
         file_hash = hashlib.sha256()
         file_hash.update(file_content)
         return file_hash 
