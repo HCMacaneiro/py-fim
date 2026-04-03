@@ -19,11 +19,3 @@ class Scanner():
     def save_scan(self, scan_data):
         baseline_data = Baseline()
         return baseline_data.write_baseline(scan_data)
-
-        
-        
-
-
-if __name__ == "__main__":
-    scan = Scanner("/home/hcm/Documents/")
-    print(scan.get_files())
