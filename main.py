@@ -1,9 +1,12 @@
 import sys
-from models.py import FileState
+from engine import Scanner
 
 
 def main():
     directory = sys.argv[1]
+    scan = Scanner(directory)
+    found_files = scan.get_files()
+    baseline = scan.save_scan(found_files)
     
 
 

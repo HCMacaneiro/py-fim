@@ -17,8 +17,8 @@ class Scanner():
         return files
     
     def save_scan(self, scan_data):
-        baseline_data = Baseline(data)
-        return
+        baseline_data = Baseline()
+        return baseline_data.write_baseline(scan_data)
 
         
         
