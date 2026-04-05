@@ -8,13 +8,21 @@ class Baseline():
         self.path = Path(__file__).parent / "baseline.json"
     
     def write_baseline(self, data):
+        full_baseline = {}
+        if self.path.is_file():
+            try:
+                with self.path.open("r", encoding="utf-8") as f:
+                    full_baseline = json.load(f)
+            except json.JSONDecodeError:
+                full_library = {}
+        full_baseline.update(data)
         try:
             with self.path.open("w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, sort_keys=True, ensure_ascii=False)
+                json.dump(full_baseline, f, indent=4, sort_keys=True, ensure_ascii=False)
+            return True
         except Exception as e:
-            print(e)
+            print(f"Error writing to baseline: {e}")
             return False
-        return True 
 
 
 class Diff():
