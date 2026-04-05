@@ -6,6 +6,9 @@ def main():
     directory = sys.argv[1]
     scan = Scanner(directory)
     found_files = scan.get_files()
+    if scan.check_baseline():
+        print("Baseline already exists.")
+        sys.exit(1)
     baseline = scan.save_scan(found_files)
     
 
