@@ -28,7 +28,7 @@ def main():
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("""Usage: python3 main.py <flag> <dir_to_monitor>
+        print("""Usage: uv run main.py <flag> <dir_to_monitor>
         Flags: 
         -r: Print diff report
         -c: Create new baseline (overwrites current one)""")
